@@ -57,7 +57,7 @@ body {
 .logo-block {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .logo {
@@ -86,21 +86,22 @@ body {
 }
 
 .login-link {
-    color: var(--text-muted);
+    color: var(--text-main);
     text-decoration: none;
-    font-size: 0.875rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--card-border);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: var(--transition);
 }
 
 .login-link:hover {
     color: var(--text-main);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
 }
 
 /* Main Content Area */
@@ -129,8 +130,8 @@ body {
     line-height: 1.25;
     text-align: center;
     letter-spacing: -0.02em;
-    margin-top: clamp(2vh, 4vh, 6vh);
-    margin-bottom: clamp(2vh, 4vh, 6vh);
+    margin-top: clamp(3vh, 5vh, 8vh);
+    margin-bottom: clamp(3vh, 5vh, 8vh);
     flex-shrink: 0;
 }
 
@@ -216,6 +217,21 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(255, 138, 0, 0.2);
     z-index: 5;
     color: white;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(255, 138, 0, 0.2);
+        transform: translateY(-50%) scale(1);
+    }
+
+    50% {
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 10px rgba(255, 138, 0, 0.15), 0 0 0 20px rgba(255, 138, 0, 0.05);
+        transform: translateY(-50%) scale(1.1);
+    }
 }
 
 .slider-button svg {
@@ -254,7 +270,7 @@ body {
     font-size: clamp(0.75rem, 2vw, 0.875rem);
     color: var(--text-muted);
     text-align: center;
-    margin-bottom: clamp(3vh, 5vh, 8vh);
+    margin-bottom: clamp(5vh, 7vh, 12vh);
     max-width: 600px;
     font-weight: 400;
 }
@@ -268,7 +284,7 @@ body {
     justify-content: center;
     width: 100%;
     text-align: center;
-    margin-bottom: clamp(3vh, 5vh, 8vh);
+    margin-bottom: clamp(5vh, 7vh, 12vh);
 }
 
 .btn {
@@ -301,7 +317,14 @@ body {
 .btn-large {
     width: 100%;
     max-width: 440px;
+    margin-bottom: clamp(16px, 3vh, 28px);
+}
+
+.btn-subtext {
+    font-size: clamp(0.75rem, 2.5vw, 0.85rem);
+    color: var(--text-muted);
     margin-bottom: clamp(12px, 3vh, 24px);
+    font-weight: 400;
 }
 
 /* Enhanced Social Proof */
