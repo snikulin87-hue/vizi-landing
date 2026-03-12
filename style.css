@@ -577,35 +577,47 @@ body {
     }
 
     .hero-titles {
-        padding: 12px 16px 18px;
+        padding: 16px 16px 20px;
+        /* Увеличили сверху, чтобы опустить карусель */
+    }
+
+    .main-title {
+        font-size: clamp(1.3rem, 5vw, 1.8rem);
+        margin-bottom: 8px;
+        /* Немного больше отступ */
+    }
+
+    .sub-title {
+        font-size: clamp(1.7rem, 7vw, 2.6rem);
     }
 
     /* Компактная карусель */
+    .carousel-wrapper {
+        padding: 0 16px 20px;
+        /* Увеличили до 20px, чтобы уравнять с верхним отступом */
+    }
+
     .slide-caption {
         padding: 12px 16px;
-        font-size: 0.9rem;
-        flex-direction: column;
-        gap: 4px;
-        /* Убираем лишнее место под точки, так как мы их вынесли */
+        font-size: 1.05rem;
+        font-weight: 600;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .carousel-dots {
         bottom: 54px;
-        /* Поднимаем точки над укороченной подписью */
         gap: 12px;
     }
 
-    .dot {
-        width: 10px;
-        height: 10px;
-    }
-
     .cta-bottom {
-        padding: 12px 16px 10px;
+        padding: 0 16px 40px;
+        /* Убрали padding-top, так как 20px уже есть в .carousel-wrapper */
     }
 
-    .btn {
-        padding: 16px 32px;
+    .btn-large {
+        max-width: none;
     }
 
     .screen-second {
