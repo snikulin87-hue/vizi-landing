@@ -34,52 +34,74 @@
 
                 <!-- Заголовок -->
                 <h1 class="main-title">
-                    Покажи клиенту его потолок за 30 секунд —<br class="mobile-break"> Забирай предоплату на каждом
-                    замере
+                    Устал слышать «я подумаю» на замерах?
                 </h1>
+                <p class="sub-title">Это можно исправить!</p>
 
-                <!-- Визуал (Слайдер) -->
-                <div class="visual-area">
-                    <div class="image-comparison-slider">
-                        <!-- Фон: До -->
-                        <img src="./before.jpg" alt="До" class="img-background"
-                            onerror="this.src='/mnt/data/IMG_3065.jpg'">
-                        <!-- Передний план: После -->
-                        <img src="./after.jpg" alt="После" class="img-foreground" id="foreground-img"
-                            onerror="this.src='/mnt/data/IMG_3081.PNG'">
+                <!-- Карусель шагов -->
+                <div class="carousel-area">
+                    <div class="carousel-container" id="carousel">
+                        <div class="carousel-track" id="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="./step1.jpg" alt="Шаг 1">
+                                <div class="slide-caption">
+                                    <span class="step-number">①</span> Сфотографируй комнату
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./step2.jpg" alt="Шаг 2">
+                                <div class="slide-caption">
+                                    <span class="step-number">②</span> Создай визуализацию за 30 сек
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./step3.jpg" alt="Шаг 3">
+                                <div class="slide-caption">
+                                    <span class="step-number">③</span> Покажи клиенту результат
+                                </div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./step4.jpg" alt="Шаг 4">
+                                <div class="slide-caption">
+                                    <span class="step-number">④</span> Забери предоплату
+                                </div>
+                            </div>
+                        </div>
 
-                        <!-- Ползунок -->
-                        <input type="range" min="0" max="100" value="50" class="slider" id="compare-slider">
-                        <div class="slider-button" id="slider-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path d="m15 18-6-6 6-6" />
-                                <path d="m9 18 6-6-6-6" />
+                        <!-- Стрелка свайпа -->
+                        <div class="swipe-hint" id="swipe-hint">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
                             </svg>
                         </div>
-                        <div class="slider-label label-before">После</div>
-                        <div class="slider-label label-after">До</div>
+                    </div>
+
+                    <!-- Точки-индикаторы -->
+                    <div class="carousel-dots">
+                        <button class="dot active" data-index="0"></button>
+                        <button class="dot" data-index="1"></button>
+                        <button class="dot" data-index="2"></button>
+                        <button class="dot" data-index="3"></button>
                     </div>
                 </div>
-
-                <!-- Новая Подсказка под Слайдером -->
-                <p class="slider-hint">Сфотографируй комнату и покажи клиенту, как может выглядеть его потолок.</p>
 
                 <!-- CTA Блок -->
                 <div class="cta-area">
                     <button class="btn btn-primary btn-large click-trial">Начать бесплатно</button>
 
-                    <!-- Обновленное Социальное Доказательство -->
+                    <!-- Социальное Доказательство -->
                     <div class="social-proof-enhanced">
                         <div class="avatars">
-                            <div class="avatar"></div>
-                            <div class="avatar"></div>
-                            <div class="avatar"></div>
-                            <div class="avatar"></div>
+                            <div class="avatar av1"></div>
+                            <div class="avatar av2"></div>
+                            <div class="avatar av3"></div>
+                            <div class="avatar av4"></div>
+                            <div class="avatar av5"></div>
                         </div>
                         <div class="social-proof-text">
-                            <span class="icon">✅</span> 214 мастеров · 47 городов · 3 200+ визуализаций за месяц
+                            <span class="icon">✅</span> 200+ мастеров · 9 200+ визуализаций за месяц
                         </div>
                     </div>
                 </div>
@@ -91,18 +113,72 @@
     <!-- Скрипты -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // 1. Image Comparison Slider Logic
-            const slider = document.getElementById('compare-slider');
-            const foregroundImg = document.getElementById('foreground-img');
-            const sliderBtn = document.getElementById('slider-button');
+            const track = document.getElementById('carousel-track');
+            const dots = document.querySelectorAll('.dot');
+            const swipeHint = document.getElementById('swipe-hint');
+            let current = 0;
+            const total = 4;
+            let autoTimer;
+            let touchStartX = 0;
+            let touchEndX = 0;
 
-            if (slider && foregroundImg && sliderBtn) {
-                slider.addEventListener('input', (e) => {
-                    const val = Math.max(0, Math.min(100, e.target.value));
-                    foregroundImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
-                    sliderBtn.style.left = `calc(${val}% - 18px)`;
-                });
+            function goTo(index) {
+                current = index;
+                track.style.transform = `translateX(-${current * 25}%)`;
+                dots.forEach((d, i) => d.classList.toggle('active', i === current));
+
+                // Hide swipe hint after first interaction
+                if (swipeHint && current > 0) {
+                    swipeHint.style.opacity = '0';
+                    swipeHint.style.pointerEvents = 'none';
+                }
             }
+
+            function next() {
+                goTo((current + 1) % total);
+            }
+
+            function prev() {
+                goTo((current - 1 + total) % total);
+            }
+
+            // Auto-advance every 3 seconds
+            function startAuto() {
+                autoTimer = setInterval(next, 3000);
+            }
+
+            function stopAuto() {
+                clearInterval(autoTimer);
+            }
+
+            // Dot clicks
+            dots.forEach(dot => {
+                dot.addEventListener('click', () => {
+                    stopAuto();
+                    goTo(parseInt(dot.dataset.index));
+                    startAuto();
+                });
+            });
+
+            // Touch swipe support
+            const carousel = document.getElementById('carousel');
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAuto();
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) next();
+                    else prev();
+                }
+                startAuto();
+            }, { passive: true });
+
+            // Start
+            startAuto();
         });
     </script>
 </body>
