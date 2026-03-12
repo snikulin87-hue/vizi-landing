@@ -19,98 +19,102 @@
         <header class="site-header">
             <div class="container header-container">
                 <div class="logo-block">
-                    <div class="logo">В<span class="highlight">И</span>ЗИ ПРО</div>
-                    <div class="logo-tagline">лучше один раз увидеть...</div>
+                    <div class="logo-image-cropped" aria-label="ВИЗИ ПРО"></div>
                 </div>
-                <div class="header-actions">
-                    <a href="#" class="login-link">👤 Войти</a>
-                </div>
+                <a href="#" class="login-link">👤 Войти</a>
             </div>
         </header>
 
-        <!-- Заголовок поверх карусели -->
+        <!-- Заголовок -->
         <div class="hero-titles">
-            <h1 class="main-title">Устал слышать «я подумаю» на замерах?</h1>
+            <h1 class="main-title">Устал слышать «я подумаю»?</h1>
             <p class="sub-title">Это можно исправить!</p>
         </div>
 
-        <!-- Карусель на весь экран -->
-        <div class="carousel-fullscreen" id="carousel">
-            <div class="carousel-track" id="carousel-track">
-                <div class="carousel-slide">
-                    <img src="./step1.jpg" alt="Шаг 1">
-                    <div class="slide-caption">
-                        <span class="step-number">①</span> Сфотографируй комнату
+        <!-- Карусель -->
+        <div class="carousel-wrapper">
+            <div class="carousel-container" id="carousel">
+                <div class="carousel-track" id="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="./step1.jpg" alt="Шаг 1">
+                        <div class="slide-caption">
+                            <span class="step-number">①</span> Сфотографируй комнату
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./step2.jpg" alt="Шаг 2">
+                        <div class="slide-caption">
+                            <span class="step-number">②</span> Создай визуализацию за 30 сек
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./step3.jpg" alt="Шаг 3">
+                        <div class="slide-caption">
+                            <span class="step-number">③</span> Покажи клиенту результат
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="./step4.jpg" alt="Шаг 4">
+                        <div class="slide-caption">
+                            <span class="step-number">④</span> Забери предоплату
+                        </div>
                     </div>
                 </div>
-                <div class="carousel-slide">
-                    <img src="./step2.jpg" alt="Шаг 2">
-                    <div class="slide-caption">
-                        <span class="step-number">②</span> Создай визуализацию за 30 сек
-                    </div>
+
+                <!-- Стрелка свайпа -->
+                <div class="swipe-hint" id="swipe-hint">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 12h14" />
+                        <path d="m12 5 7 7-7 7" />
+                    </svg>
                 </div>
-                <div class="carousel-slide">
-                    <img src="./step3.jpg" alt="Шаг 3">
-                    <div class="slide-caption">
-                        <span class="step-number">③</span> Покажи клиенту результат
-                    </div>
-                </div>
-                <div class="carousel-slide">
-                    <img src="./step4.jpg" alt="Шаг 4">
-                    <div class="slide-caption">
-                        <span class="step-number">④</span> Забери предоплату
-                    </div>
+                <!-- Точки вставлены внутрь карусели -->
+                <div class="carousel-dots">
+                    <button class="dot active" data-index="0"></button>
+                    <button class="dot" data-index="1"></button>
+                    <button class="dot" data-index="2"></button>
+                    <button class="dot" data-index="3"></button>
                 </div>
             </div>
+        </div>
 
-            <!-- Стрелка свайпа -->
-            <div class="swipe-hint" id="swipe-hint">
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
+        <!-- CTA + хинт на скролл -->
+        <div class="cta-bottom">
+            <button class="btn btn-primary btn-large">Начать бесплатно</button>
+            <div class="scroll-hint">
+                <span class="scroll-hint-text">Листайте</span>
+                <svg class="scroll-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 9l6 6 6-6" />
                 </svg>
             </div>
-        </div>
-
-        <!-- Точки -->
-        <div class="carousel-dots">
-            <button class="dot active" data-index="0"></button>
-            <button class="dot" data-index="1"></button>
-            <button class="dot" data-index="2"></button>
-            <button class="dot" data-index="3"></button>
-        </div>
-
-        <!-- Кнопка CTA — прибита к низу экрана -->
-        <div class="cta-fixed">
-            <button class="btn btn-primary btn-large click-trial">Начать бесплатно</button>
         </div>
 
     </section>
 
     <!-- ====== ЭКРАН 2: Соцдоказательство + До/После ====== -->
     <section class="screen-second">
-        <div class="container">
+        <div class="container second-container">
 
             <!-- Социальное доказательство -->
             <div class="social-proof-block">
-                <div class="social-proof-enhanced">
-                    <div class="avatars">
-                        <div class="avatar av1"></div>
-                        <div class="avatar av2"></div>
-                        <div class="avatar av3"></div>
-                        <div class="avatar av4"></div>
-                        <div class="avatar av5"></div>
-                    </div>
-                    <div class="social-proof-text">
-                        <span class="icon">✅</span> 200+ мастеров · 9 200+ визуализаций за месяц
-                    </div>
+                <h2 class="social-title">С нами уже</h2>
+                <div class="avatars">
+                    <div class="avatar av1"></div>
+                    <div class="avatar av2"></div>
+                    <div class="avatar av3"></div>
+                    <div class="avatar av4"></div>
+                    <div class="avatar av5"></div>
                 </div>
+                <p class="social-proof-text">
+                    <span class="icon">✅</span> 200+ мастеров · 9 200+ визуализаций за месяц
+                </p>
             </div>
 
             <!-- Блок До / После -->
             <div class="before-after-section">
-                <h2 class="section-title">Как это выглядит</h2>
+                <h2 class="section-title">Клиент видит результат до монтажа</h2>
                 <div class="image-comparison-slider">
                     <img src="./before.jpg" alt="До" class="img-background">
                     <img src="./after.jpg" alt="После" class="img-foreground" id="foreground-img">
@@ -125,6 +129,12 @@
                     <div class="slider-label label-before">После</div>
                     <div class="slider-label label-after">До</div>
                 </div>
+                <p class="slider-tip">Двигайте ползунок, чтобы увидеть разницу</p>
+            </div>
+
+            <!-- Вторая CTA -->
+            <div class="cta-second">
+                <button class="btn btn-primary btn-large">Начать бесплатно</button>
             </div>
 
         </div>
@@ -133,55 +143,62 @@
     <!-- Скрипты -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // === Carousel Logic ===
+            // === Carousel ===
             const track = document.getElementById('carousel-track');
             const dots = document.querySelectorAll('.dot');
             const swipeHint = document.getElementById('swipe-hint');
-            let current = 0;
-            const total = 4;
-            let autoTimer;
-            let touchStartX = 0;
+            let current = 0, total = 4, autoTimer, touchStartX = 0;
 
-            function goTo(index) {
-                current = index;
+            function goTo(i) {
+                current = i;
                 track.style.transform = `translateX(-${current * 25}%)`;
-                dots.forEach((d, i) => d.classList.toggle('active', i === current));
-                if (swipeHint && current > 0) {
-                    swipeHint.style.opacity = '0';
-                    swipeHint.style.pointerEvents = 'none';
-                }
+                dots.forEach((d, j) => d.classList.toggle('active', j === current));
+                if (swipeHint) { swipeHint.style.opacity = current === 3 ? '0' : '1'; }
             }
-
             function next() { goTo((current + 1) % total); }
             function prev() { goTo((current - 1 + total) % total); }
-
             function startAuto() { autoTimer = setInterval(next, 3000); }
             function stopAuto() { clearInterval(autoTimer); }
 
-            dots.forEach(dot => {
-                dot.addEventListener('click', () => { stopAuto(); goTo(parseInt(dot.dataset.index)); startAuto(); });
-            });
-
-            const carousel = document.getElementById('carousel');
-            carousel.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAuto(); }, { passive: true });
-            carousel.addEventListener('touchend', (e) => {
-                const diff = touchStartX - e.changedTouches[0].screenX;
-                if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
+            dots.forEach(d => d.addEventListener('click', () => {
+                stopAuto();
+                goTo(+d.dataset.index);
                 startAuto();
+            }));
+
+            if (swipeHint) {
+                swipeHint.addEventListener('click', () => {
+                    stopAuto();
+                    next();
+                    startAuto();
+                });
+            }
+
+            const car = document.getElementById('carousel');
+            car.addEventListener('touchstart', e => {
+                touchStartX = e.changedTouches[0].clientX;
+                stopAuto();
             }, { passive: true });
 
+            car.addEventListener('touchend', e => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) next();
+                    else prev();
+                }
+                startAuto();
+            }, { passive: true });
             startAuto();
 
-            // === Before/After Slider Logic ===
+            // === Before/After Slider ===
             const slider = document.getElementById('compare-slider');
-            const foregroundImg = document.getElementById('foreground-img');
-            const sliderBtn = document.getElementById('slider-button');
-
-            if (slider && foregroundImg && sliderBtn) {
-                slider.addEventListener('input', (e) => {
-                    const val = Math.max(0, Math.min(100, e.target.value));
-                    foregroundImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
-                    sliderBtn.style.left = `calc(${val}% - 18px)`;
+            const fg = document.getElementById('foreground-img');
+            const btn = document.getElementById('slider-button');
+            if (slider && fg && btn) {
+                slider.addEventListener('input', e => {
+                    const v = Math.max(0, Math.min(100, e.target.value));
+                    fg.style.clipPath = `polygon(0 0, ${v}% 0, ${v}% 100%, 0 100%)`;
+                    btn.style.left = `calc(${v}% - 18px)`;
                 });
             }
         });
