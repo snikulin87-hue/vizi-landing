@@ -558,23 +558,46 @@ body {
         padding-bottom: 6px;
     }
 
+    /* Уменьшенная шапка */
+    .logo-image-cropped {
+        height: 36px;
+        width: 136px;
+    }
+
+    .login-link {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+        border-radius: 8px;
+        margin-top: 0;
+    }
+
+    .header-container {
+        align-items: center;
+        /* Центрируем по вертикали мелкие элементы */
+    }
+
     .hero-titles {
-        padding: 16px 16px 22px;
+        padding: 12px 16px 18px;
     }
 
-    .logo-img {
-        height: 84px;
-        /* Увеличено в 3 раза (было 28px) */
-    }
-
-    .logo-badge {
-        padding: 6px 14px;
-        border-radius: 10px;
-    }
-
+    /* Компактная карусель */
     .slide-caption {
-        padding: 24px 16px 16px;
-        font-size: 1rem;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        flex-direction: column;
+        gap: 4px;
+        /* Убираем лишнее место под точки, так как мы их вынесли */
+    }
+
+    .carousel-dots {
+        bottom: 54px;
+        /* Поднимаем точки над укороченной подписью */
+        gap: 12px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
     }
 
     .cta-bottom {
