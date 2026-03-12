@@ -12,10 +12,10 @@
 </head>
 
 <body>
-    <!-- Главный контейнер (100dvh) -->
-    <div class="single-screen-wrapper">
+    <!-- ====== ЭКРАН 1: Герой ====== -->
+    <section class="screen-hero">
 
-        <!-- Шапка с логотипом -->
+        <!-- Шапка -->
         <header class="site-header">
             <div class="container header-container">
                 <div class="logo-block">
@@ -28,91 +28,112 @@
             </div>
         </header>
 
-        <!-- Основной контент -->
-        <main class="main-content">
-            <div class="container main-container">
+        <!-- Заголовок поверх карусели -->
+        <div class="hero-titles">
+            <h1 class="main-title">Устал слышать «я подумаю» на замерах?</h1>
+            <p class="sub-title">Это можно исправить!</p>
+        </div>
 
-                <!-- Заголовок -->
-                <h1 class="main-title">
-                    Устал слышать «я подумаю» на замерах?
-                </h1>
-                <p class="sub-title">Это можно исправить!</p>
-
-                <!-- Карусель шагов -->
-                <div class="carousel-area">
-                    <div class="carousel-container" id="carousel">
-                        <div class="carousel-track" id="carousel-track">
-                            <div class="carousel-slide">
-                                <img src="./step1.jpg" alt="Шаг 1">
-                                <div class="slide-caption">
-                                    <span class="step-number">①</span> Сфотографируй комнату
-                                </div>
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="./step2.jpg" alt="Шаг 2">
-                                <div class="slide-caption">
-                                    <span class="step-number">②</span> Создай визуализацию за 30 сек
-                                </div>
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="./step3.jpg" alt="Шаг 3">
-                                <div class="slide-caption">
-                                    <span class="step-number">③</span> Покажи клиенту результат
-                                </div>
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="./step4.jpg" alt="Шаг 4">
-                                <div class="slide-caption">
-                                    <span class="step-number">④</span> Забери предоплату
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Стрелка свайпа -->
-                        <div class="swipe-hint" id="swipe-hint">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M5 12h14" />
-                                <path d="m12 5 7 7-7 7" />
-                            </svg>
-                        </div>
-                    </div>
-
-                    <!-- Точки-индикаторы -->
-                    <div class="carousel-dots">
-                        <button class="dot active" data-index="0"></button>
-                        <button class="dot" data-index="1"></button>
-                        <button class="dot" data-index="2"></button>
-                        <button class="dot" data-index="3"></button>
+        <!-- Карусель на весь экран -->
+        <div class="carousel-fullscreen" id="carousel">
+            <div class="carousel-track" id="carousel-track">
+                <div class="carousel-slide">
+                    <img src="./step1.jpg" alt="Шаг 1">
+                    <div class="slide-caption">
+                        <span class="step-number">①</span> Сфотографируй комнату
                     </div>
                 </div>
-
-                <!-- CTA Блок -->
-                <div class="cta-area">
-                    <button class="btn btn-primary btn-large click-trial">Начать бесплатно</button>
-
-                    <!-- Социальное Доказательство -->
-                    <div class="social-proof-enhanced">
-                        <div class="avatars">
-                            <div class="avatar av1"></div>
-                            <div class="avatar av2"></div>
-                            <div class="avatar av3"></div>
-                            <div class="avatar av4"></div>
-                            <div class="avatar av5"></div>
-                        </div>
-                        <div class="social-proof-text">
-                            <span class="icon">✅</span> 200+ мастеров · 9 200+ визуализаций за месяц
-                        </div>
+                <div class="carousel-slide">
+                    <img src="./step2.jpg" alt="Шаг 2">
+                    <div class="slide-caption">
+                        <span class="step-number">②</span> Создай визуализацию за 30 сек
                     </div>
                 </div>
-
+                <div class="carousel-slide">
+                    <img src="./step3.jpg" alt="Шаг 3">
+                    <div class="slide-caption">
+                        <span class="step-number">③</span> Покажи клиенту результат
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="./step4.jpg" alt="Шаг 4">
+                    <div class="slide-caption">
+                        <span class="step-number">④</span> Забери предоплату
+                    </div>
+                </div>
             </div>
-        </main>
-    </div>
+
+            <!-- Стрелка свайпа -->
+            <div class="swipe-hint" id="swipe-hint">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- Точки -->
+        <div class="carousel-dots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+            <button class="dot" data-index="3"></button>
+        </div>
+
+        <!-- Кнопка CTA — прибита к низу экрана -->
+        <div class="cta-fixed">
+            <button class="btn btn-primary btn-large click-trial">Начать бесплатно</button>
+        </div>
+
+    </section>
+
+    <!-- ====== ЭКРАН 2: Соцдоказательство + До/После ====== -->
+    <section class="screen-second">
+        <div class="container">
+
+            <!-- Социальное доказательство -->
+            <div class="social-proof-block">
+                <div class="social-proof-enhanced">
+                    <div class="avatars">
+                        <div class="avatar av1"></div>
+                        <div class="avatar av2"></div>
+                        <div class="avatar av3"></div>
+                        <div class="avatar av4"></div>
+                        <div class="avatar av5"></div>
+                    </div>
+                    <div class="social-proof-text">
+                        <span class="icon">✅</span> 200+ мастеров · 9 200+ визуализаций за месяц
+                    </div>
+                </div>
+            </div>
+
+            <!-- Блок До / После -->
+            <div class="before-after-section">
+                <h2 class="section-title">Как это выглядит</h2>
+                <div class="image-comparison-slider">
+                    <img src="./before.jpg" alt="До" class="img-background">
+                    <img src="./after.jpg" alt="После" class="img-foreground" id="foreground-img">
+                    <input type="range" min="0" max="100" value="50" class="slider" id="compare-slider">
+                    <div class="slider-button" id="slider-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6" />
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </div>
+                    <div class="slider-label label-before">После</div>
+                    <div class="slider-label label-after">До</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <!-- Скрипты -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // === Carousel Logic ===
             const track = document.getElementById('carousel-track');
             const dots = document.querySelectorAll('.dot');
             const swipeHint = document.getElementById('swipe-hint');
@@ -120,65 +141,49 @@
             const total = 4;
             let autoTimer;
             let touchStartX = 0;
-            let touchEndX = 0;
 
             function goTo(index) {
                 current = index;
                 track.style.transform = `translateX(-${current * 25}%)`;
                 dots.forEach((d, i) => d.classList.toggle('active', i === current));
-
-                // Hide swipe hint after first interaction
                 if (swipeHint && current > 0) {
                     swipeHint.style.opacity = '0';
                     swipeHint.style.pointerEvents = 'none';
                 }
             }
 
-            function next() {
-                goTo((current + 1) % total);
-            }
+            function next() { goTo((current + 1) % total); }
+            function prev() { goTo((current - 1 + total) % total); }
 
-            function prev() {
-                goTo((current - 1 + total) % total);
-            }
+            function startAuto() { autoTimer = setInterval(next, 3000); }
+            function stopAuto() { clearInterval(autoTimer); }
 
-            // Auto-advance every 3 seconds
-            function startAuto() {
-                autoTimer = setInterval(next, 3000);
-            }
-
-            function stopAuto() {
-                clearInterval(autoTimer);
-            }
-
-            // Dot clicks
             dots.forEach(dot => {
-                dot.addEventListener('click', () => {
-                    stopAuto();
-                    goTo(parseInt(dot.dataset.index));
-                    startAuto();
-                });
+                dot.addEventListener('click', () => { stopAuto(); goTo(parseInt(dot.dataset.index)); startAuto(); });
             });
 
-            // Touch swipe support
             const carousel = document.getElementById('carousel');
-            carousel.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                stopAuto();
-            }, { passive: true });
-
+            carousel.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; stopAuto(); }, { passive: true });
             carousel.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) next();
-                    else prev();
-                }
+                const diff = touchStartX - e.changedTouches[0].screenX;
+                if (Math.abs(diff) > 50) { diff > 0 ? next() : prev(); }
                 startAuto();
             }, { passive: true });
 
-            // Start
             startAuto();
+
+            // === Before/After Slider Logic ===
+            const slider = document.getElementById('compare-slider');
+            const foregroundImg = document.getElementById('foreground-img');
+            const sliderBtn = document.getElementById('slider-button');
+
+            if (slider && foregroundImg && sliderBtn) {
+                slider.addEventListener('input', (e) => {
+                    const val = Math.max(0, Math.min(100, e.target.value));
+                    foregroundImg.style.clipPath = `polygon(0 0, ${val}% 0, ${val}% 100%, 0 100%)`;
+                    sliderBtn.style.left = `calc(${val}% - 18px)`;
+                });
+            }
         });
     </script>
 </body>
