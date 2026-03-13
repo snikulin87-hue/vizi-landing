@@ -85,106 +85,80 @@
 
     <!-- ====== Блок 3: Проблемы ====== -->
     <section class="screen-problems" id="block-3">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">Знакомые ситуации?</h2>
-                <div class="problems-grid">
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент говорит «Надо подумать»</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент не может представить, как будет выглядеть потолок</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент боится ошибиться с освещением или дизайном</p>
-                    </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент выбирает самый дешёвый вариант</p>
-                    </div>
+        <div class="container">
+            <h2 class="section-title">Знакомые ситуации?</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент говорит «Надо подумать»</p>
                 </div>
-                <p class="problem-footer">Проблема не в цене. Проблема в том, что клиент не видит результат.</p>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент не может представить, как будет выглядеть потолок</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент боится ошибиться с освещением или дизайном</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент выбирает самый дешёвый вариант</p>
+                </div>
             </div>
+            <p class="problem-footer">Проблема не в цене. Проблема в том, что клиент не видит результат.</p>
         </div>
     </section>
 
     <!-- ====== Блок 4: Решение ====== -->
     <section class="screen-solution" id="block-4">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">ВИЗИ ПРО убирает сомнения.</h2>
-                <p class="section-description">Клиент видит потолок — и понимает, за что платит.</p>
+        <div class="container">
+            <h2 class="section-title">ВИЗИ ПРО убирает сомнения.</h2>
+            <p class="section-description">Клиент видит потолок — и понимает, за что платит.</p>
 
-                <div class="before-after-container">
-                    <div class="image-comparison-slider">
-                        <img src="./after.jpg" alt="После" class="img-background">
-                        <img src="./before.jpg" alt="До" class="img-foreground" id="foreground-img">
-                        <input type="range" min="0" max="100" value="50" class="slider" id="compare-slider">
-                        <div class="slider-button" id="slider-button">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="m15 18-6-6 6-6" />
-                                <path d="m9 18 6-6-6-6" />
-                            </svg>
-                        </div>
-                        <div class="slider-label label-before">После</div>
-                        <div class="slider-label label-after">До</div>
+            <div class="before-after-container">
+                <div class="image-comparison-slider">
+                    <img src="./after.jpg" alt="После" class="img-background">
+                    <img src="./before.jpg" alt="До" class="img-foreground" id="foreground-img">
+                    <input type="range" min="0" max="100" value="50" class="slider" id="compare-slider">
+                    <div class="slider-button" id="slider-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m15 18-6-6 6-6" />
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
                     </div>
-                    <p class="slider-tip">Двигайте ползунок, чтобы увидеть разницу</p>
+                    <div class="slider-label label-before">После</div>
+                    <div class="slider-label label-after">До</div>
                 </div>
+                <p class="slider-tip">Двигайте ползунок, чтобы увидеть разницу</p>
+            </div>
 
-                <div class="cta-center">
-                    <a href="#" class="btn btn-primary">Начать бесплатно</a>
-                </div>
+            <div class="cta-center">
+                <a href="#" class="btn btn-primary">Начать бесплатно</a>
             </div>
         </div>
     </section>
 
     <!-- ====== Блок 5: Выгоды ====== -->
     <section class="screen-benefits" id="block-5">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">Что это даёт?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-header">📈 +1-2 договора</div>
-                        <p>из каждых 10 замеров</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-header">💰 Чек x2</div>
-                        <p>за счёт света и дополнений</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-header">⚡ Решение на месте</div>
-                        <p>не «я перезвоню»</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-header">⏱ 30 секунд</div>
-                        <p>визуализация готова</p>
-                    </div>
+        <div class="container">
+            <h2 class="section-title">Что это даёт?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-header">📈 +1-2 договора</div>
+                    <p>из каждых 10 замеров</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">💰 Чек x2</div>
+                    <p>за счёт света и дополнений</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">⚡ Решение на месте</div>
+                    <p>не «я перезвоню»</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">⏱ 30 секунд</div>
+                    <p>визуализация готова</p>
                 </div>
             </div>
         </div>
@@ -192,137 +166,106 @@
 
     <!-- ====== Блок 6: Для кого ====== -->
     <section class="screen-audience" id="block-6">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">Кому подойдёт ВИЗИ ПРО</h2>
-                <p class="audience-text">Частным мастерам и компаниям любого размера — всем, кто общается с клиентом на
-                    замере.</p>
-            </div>
+        <div class="container">
+            <h2 class="section-title">Кому подойдёт ВИЗИ ПРО</h2>
+            <p class="audience-text">Частным мастерам и компаниям любого размера — всем, кто общается с клиентом на
+                замере.</p>
         </div>
     </section>
 
     <!-- ====== Блок 7: Социальное доказательство ====== -->
     <section class="screen-proof" id="block-7">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">Что говорят в чатах</h2>
-                <div class="reviews-grid">
-                    <div class="review-card" data-aos="fade-up">
-                        <img src="./review1.png" alt="Отзыв Тимура">
-                    </div>
-                    <div class="review-card" data-aos="fade-up" data-aos-delay="100">
-                        <img src="./review2.jpg" alt="Отзыв Петра">
-                    </div>
-                    <div class="review-card" data-aos="fade-up" data-aos-delay="200">
-                        <img src="./review3.jpg" alt="Отзыв Димы">
-                    </div>
+        <div class="container">
+            <h2 class="section-title">Что говорят в чатах</h2>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <img src="./review1.png" alt="Отзыв Сергея: закрыл объект на 250к">
                 </div>
-                <div class="social-proof-content">
-                    <p class="social-proof-text">✅ 200+ пользователей<br>9 200+ визуализаций за месяц</p>
+                <div class="review-card">
+                    <img src="./review2.jpg" alt="Отзыв Димы: шок, не ожидал такого">
                 </div>
+                <div class="review-card">
+                    <img src="./review3.jpg" alt="Отзыв Петра: 20 секунд против 20 минут">
+                </div>
+            </div>
+            <div class="social-proof-content">
+                <p class="social-proof-text">✅ 200+ пользователей · 9 200+ визуализаций за месяц</p>
             </div>
         </div>
     </section>
 
     <!-- ====== Блок 8: Экономика ====== -->
     <section class="screen-economy" id="block-8">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">Сколько денег это приносит</h2>
-                <div class="economy-grid">
-                    <div class="economy-item">
-                        <h3>Больше договоров</h3>
-                        <div class="item-compare">
-                            <div class="compare-row old">Было: 10 замеров → 4 договора</div>
-                            <div class="compare-row new">Стало: 10 замеров → 6 договоров</div>
-                        </div>
-                        <p class="item-benefit">+2 договора с каждых 10 замеров</p>
+        <div class="container">
+            <h2 class="section-title">Сколько денег это приносит</h2>
+            <div class="economy-grid">
+                <div class="economy-item">
+                    <h3>Больше договоров</h3>
+                    <div class="item-compare">
+                        <div class="compare-row old">Было: 10 замеров → 4 договора</div>
+                        <div class="compare-row new">Стало: 10 замеров → 6 договоров</div>
                     </div>
-                    <div class="economy-item">
-                        <h3>Выше средний чек</h3>
-                        <div class="item-compare">
-                            <div class="compare-row old">Было: 57 000 ₽ <br><small>профиль со вставкой + светильники</small>
-                            </div>
-                            <div class="compare-row new">Стало: 132 000 ₽ <br><small>теневой профиль + треки +
-                                    карниз</small></div>
+                    <p class="item-benefit">+2 договора с каждых 10 замеров</p>
+                </div>
+                <div class="economy-item">
+                    <h3>Выше средний чек</h3>
+                    <div class="item-compare">
+                        <div class="compare-row old">Было: 57 000 ₽ <br><small>профиль со вставкой + светильники</small>
                         </div>
-                        <p class="item-benefit">Чек вырос в 2,3 раза</p>
+                        <div class="compare-row new">Стало: 132 000 ₽ <br><small>теневой профиль + треки +
+                                карниз</small></div>
                     </div>
+                    <p class="item-benefit">Чек вырос в 2,3 раза</p>
                 </div>
-                <p class="economy-footer">✅ Средний результат теста трёх крупных компаний за 2 месяца использования</p>
-                <div class="cta-center">
-                    <a href="#" class="btn btn-primary">Начать бесплатно</a>
-                </div>
+            </div>
+            <p class="economy-footer">✅ Средний результат теста трёх крупных компаний за 2 месяца использования</p>
+            <div class="cta-center">
+                <a href="#" class="btn btn-primary">Начать бесплатно</a>
             </div>
         </div>
     </section>
 
+    <!-- ====== Блок 9: Тарифы ====== -->
     <section class="screen-pricing" id="block-9">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">Наши тарифы</h2>
-                <div class="m-grid">
-                    <!-- СТАРТ -->
-                    <div class="m-card" data-aos="fade-up">
-                        <div class="m-header">
-                            <div class="m-title">СТАРТ</div>
-                            <div class="m-price">1990<span class="m-currency">₽/мес</span></div>
-                        </div>
-                        <div class="m-content">
-                            <div class="m-gen">5 генераций в день</div>
-                            <div class="m-desc">для мастера с 1 и менее замера в день.</div>
-                        </div>
-                    </div>
-
-                    <!-- МАСТЕР -->
-                    <div class="m-card master" data-aos="fade-up" data-aos-delay="100">
-                        <div class="m-header">
-                            <div class="m-title">МАСТЕР <span class="m-badge">POPULAR</span></div>
-                            <div class="m-price">3490<span class="m-currency">₽/мес</span></div>
-                        </div>
-                        <div class="m-content">
-                            <div class="m-gen">10 генераций в день</div>
-                            <div class="m-desc">для активного мастера с 1-3 замерами в день.</div>
-                        </div>
-                    </div>
-
-                    <!-- PRO -->
-                    <div class="m-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="m-header">
-                            <div class="m-title">ПРО</div>
-                            <div class="m-price">5990<span class="m-currency">₽/мес</span></div>
-                        </div>
-                        <div class="m-content">
-                            <div class="m-gen">20 генераций в день</div>
-                            <div class="m-desc">для сильного мастера с 3-5 замерами в день.</div>
-                        </div>
-                    </div>
-
-                    <!-- КОМПАНИЯ -->
-                    <div class="m-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="m-header">
-                            <div class="m-title">КОМПАНИЯ</div>
-                            <div class="m-price">14990<span class="m-currency">₽/мес</span></div>
-                        </div>
-                        <div class="m-content">
-                            <div class="m-gen">60 генераций в день</div>
-                            <div class="m-desc">для компании с 2-4 замерчиками.</div>
-                        </div>
-                    </div>
+        <div class="container">
+            <h2 class="section-title">Выберите тариф</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>СТАРТ</h3>
+                    <div class="price">1 990 ₽/мес</div>
+                    <p class="stats">5 генераций/день</p>
+                    <p class="desc">Для монтажника с 1 замером в день</p>
                 </div>
-                <div class="cta-center" style="margin-top: 40px;">
-                    <a href="#" class="btn btn-primary">Попробовать бесплатно</a>
+                <div class="pricing-card highlighted">
+                    <h3>МАСТЕР</h3>
+                    <div class="price">3 490 ₽/мес</div>
+                    <p class="stats">10 генераций/день</p>
+                    <p class="desc">Для активного монтажника с 2–3 замерами в день</p>
                 </div>
+                <div class="pricing-card">
+                    <h3>PRO</h3>
+                    <div class="price">5 990 ₽/мес</div>
+                    <p class="stats">20 генераций/день</p>
+                    <p class="desc">Для сильного мастера или небольшой бригады с 3–5 замерами в день</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>КОМПАНИЯ</h3>
+                    <div class="price">14 990 ₽/мес</div>
+                    <p class="stats">60 генераций/день</p>
+                    <p class="desc">Для компаний с несколькими замерщиками. Статистика по сотрудникам.</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="#" class="btn btn-primary">Попробовать бесплатно</a>
             </div>
         </div>
     </section>
 
     <!-- ====== Блок 10: FAQ ====== -->
     <section class="screen-faq" id="block-10">
-        <div class="section-frame">
-            <div class="container faq-container">
-                <h2 class="section-title">Частые вопросы</h2>
-                <div class="faq-accordion">
+        <div class="container faq-container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <div class="faq-accordion">
                 <div class="faq-item">
                     <button class="faq-question">1. Сколько времени занимает визуализация?</button>
                     <div class="faq-answer">
@@ -382,8 +325,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- ====== Блок 11: Финал ====== -->
     <section class="screen-final" id="block-11">
@@ -474,10 +416,6 @@
             });
         });
     </script>
-
-
-
-
 </body>
 
 </html>

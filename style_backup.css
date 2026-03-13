@@ -1,17 +1,17 @@
 :root {
-    --bg-dark: #0A0D14;
-    --bg-card: rgba(255, 255, 255, 0.03);
+    --bg-dark: #0B0B0D;
+    --bg-card: #1A1A1A;
     --accent-orange: #FF8A00;
     --accent-hover: #e07900;
     --accent-red: #FF4B2B;
     --text-main: #FFFFFF;
-    --text-muted: rgba(255, 255, 255, 0.6);
-    --card-border: rgba(255, 255, 255, 0.1);
-    --btn-radius: 14px;
-    --card-radius: 28px;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --btn-radius: 12px;
+    --card-radius: 20px;
     --font-main: 'Outfit', sans-serif;
-    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --container-width: 1200px;
+    --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --container-width: 1100px;
 }
 
 * {
@@ -24,9 +24,10 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-main);
-    line-height: 1.6;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
     overflow-x: hidden;
-    position: relative;
 }
 
 .container {
@@ -38,50 +39,24 @@ body {
 
 /* ─── Общие стили секций ─── */
 section {
-    padding: 60px 0; /* Приглушил внешние отступы, так как добавил внутренние */
+    padding: 60px 0;
 }
 
 .section-title {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem); /* Уменьшил ещё сильнее */
-    font-weight: 700;
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+    font-weight: 400;
     text-align: center;
-    margin-bottom: 40px; /* Отступ оставляю, он за "воздушность" */
+    margin-bottom: 24px;
     line-height: 1.15;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 .section-description {
-    font-size: 0.85rem; /* Уменьшил с 1rem */
-    color: var(--text-muted);
     text-align: center;
-    max-width: 700px;
-    margin: -20px auto 40px auto;
-}
-
-/* ─── Section Framing (Option 3) ─── */
-.section-frame {
-    max-width: 1240px;
-    margin: 10px auto; /* Центрируем и уменьшаем внешние зазоры */
-    background: rgba(255, 255, 255, 0.015);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 48px;
-    padding: 60px 0; /* Добавил отступы сверху и снизу для "воздушности" */
-    position: relative;
-    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-}
-
-.section-frame:hover {
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    background: rgba(255, 255, 255, 0.02);
-}
-
-@media (max-width: 1280px) {
-    .section-frame {
-        max-width: calc(100% - 30px);
-        margin: 20px 15px 40px 15px;
-        border-radius: 32px;
-    }
+    max-width: 800px;
+    margin: 0 auto 48px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
 }
 
 .cta-center {
@@ -96,7 +71,7 @@ section {
     display: flex;
     flex-direction: column;
     padding: 0;
-    background: transparent; /* Убрал блокирующий фон, чтобы светилась аврора */
+    background: radial-gradient(circle at top right, rgba(255, 138, 0, 0.05) 0%, transparent 40%);
 }
 
 .site-header {
@@ -121,9 +96,10 @@ section {
 .login-link {
     color: var(--text-main);
     text-decoration: none;
-    font-size: 0.8rem;
-    padding: 6px 12px;
-    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 8px 16px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid var(--card-border);
     transition: var(--transition);
@@ -146,13 +122,13 @@ section {
     color: var(--accent-orange);
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
     margin-bottom: 16px;
 }
 
 .main-title {
-    font-size: clamp(1.7rem, 4.5vw, 2.5rem);
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
     line-height: 1.1;
     margin-bottom: 32px;
     font-weight: 400;
@@ -160,7 +136,7 @@ section {
 }
 
 .hero-description {
-    font-size: 0.9rem; /* Уменьшил с 1.1rem */
+    font-size: 1.25rem;
     color: var(--text-muted);
     margin-bottom: 40px;
     line-height: 1.6;
@@ -168,28 +144,23 @@ section {
 }
 
 .hero-pain {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.03);
     border-left: 4px solid var(--accent-orange);
-    padding: 24px;
-    border-radius: 4px 16px 16px 4px;
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
     margin-bottom: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .hero-pain p {
-    font-size: 1.1rem; /* Вернул (было 1rem) */
+    font-size: 1.1rem;
     color: var(--text-muted);
 }
 
 .hero-pain .accent-text {
     font-weight: 700;
     color: var(--text-main);
-    font-size: 1.3rem; /* Вернул (было 1.2rem) */
+    font-size: 1.3rem;
     margin-top: 4px;
-    display: block;
 }
 
 .hero-visual {
@@ -212,7 +183,7 @@ section {
 
 /* ─── Блок 2: Карусель ─── */
 .screen-carousel {
-    background: transparent;
+    background: var(--bg-card);
 }
 
 .carousel-wrapper {
@@ -224,10 +195,10 @@ section {
     position: relative;
     border-radius: var(--card-radius);
     overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--card-border);
     aspect-ratio: 1/1;
-    max-width: 650px;
+    max-width: 600px;
     margin-inline: auto;
 }
 
@@ -258,7 +229,7 @@ section {
     padding: 30px;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     color: white;
-    font-size: 0.95rem; /* Уменьшил с 1.2rem */
+    font-size: 1.5rem;
     font-weight: 700;
     text-align: center;
 }
@@ -318,8 +289,7 @@ section {
 
 /* ─── Блок 3: Проблемы ─── */
 .screen-problems {
-    padding: 24px 0; /* Еще плотнее */
-    background: transparent;
+    padding: 40px 0;
 }
 
 .problems-grid {
@@ -330,65 +300,41 @@ section {
 }
 
 .problem-card {
-    background: #333336; /* Более светлый серый для контраста */
-    padding: 24px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.12); /* Чуть ярче рамка */
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
     transition: var(--transition);
-    display: flex;
-    flex-direction: column; /* Вертикально как на тарифах */
-    align-items: center;
-    text-align: center;
-    gap: 16px;
-    backdrop-filter: blur(15px);
 }
 
 .problem-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 138, 0, 0.4); /* Оранжевый акцент при наведении */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-red);
 }
 
 .problem-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Тонкая светлая рамка */
-    color: var(--text-muted);
-    margin-bottom: 0;
-    flex-shrink: 0;
-}
-
-.problem-icon svg {
-    width: 20px;
-    height: 20px;
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-bottom: 8px;
 }
 
 .problem-card p {
-    font-size: 0.85rem;
-    font-weight: 500;
-    line-height: 1.4;
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .problem-footer {
     text-align: center;
     font-weight: 700;
-    font-size: 1rem; /* Уменьшил с 1.15rem */
-    color: var(--text-main);
-    max-width: 700px;
-    margin: 30px auto 0;
-    line-height: 1.4;
-    opacity: 0.9;
+    font-size: 1.4rem;
+    color: var(--accent-red);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* ─── Блок 4: Решение / До-После ─── */
 .screen-solution {
-    background: transparent;
+    background: radial-gradient(circle at bottom left, rgba(255, 138, 0, 0.05) 0%, transparent 30%);
 }
 
 .before-after-container {
@@ -400,10 +346,10 @@ section {
     position: relative;
     width: 100%;
     aspect-ratio: 4/3;
-    border-radius: var(--card-radius);
+    border-radius: 30px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--card-border);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
 }
 
 .img-background,
@@ -479,8 +425,7 @@ section {
 
 /* ─── Блок 5: Выгоды ─── */
 .screen-benefits {
-    padding: 24px 0;
-    background: transparent;
+    background: var(--bg-card);
 }
 
 .benefits-grid {
@@ -490,32 +435,29 @@ section {
 }
 
 .benefit-card {
-    background: rgba(255, 255, 255, 0.02);
-    padding: 24px 20px;
-    border-radius: 20px;
-    border: 1px solid rgba(0, 163, 255, 0.2);
+    background: var(--bg-dark);
+    padding: 40px 30px;
+    border-radius: var(--card-radius);
+    border: 1px solid var(--card-border);
     text-align: center;
     transition: var(--transition);
-    backdrop-filter: blur(10px);
 }
 
 .benefit-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-5px);
     border-color: var(--accent-orange);
-    box-shadow: 0 15px 40px rgba(255, 138, 0, 0.15);
 }
 
 .benefit-header {
-    font-size: 1rem; /* Уменьшил с 1.15rem */
+    font-size: 1.5rem;
     font-weight: 800;
     color: var(--accent-orange);
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 
 .benefit-card p {
     color: var(--text-muted);
     font-weight: 500;
-    font-size: 0.75rem; /* Уменьшил с 0.8rem */
 }
 
 /* ─── Блок 6: Аудитория ─── */
@@ -524,7 +466,7 @@ section {
 }
 
 .audience-text {
-    font-size: 1rem; /* Уменьшил с 1.3rem */
+    font-size: 1.5rem;
     max-width: 800px;
     margin: 0 auto;
     color: var(--text-main);
@@ -533,7 +475,7 @@ section {
 
 /* ─── Блок 7: Соцдоказательство ─── */
 .screen-proof {
-    background: transparent;
+    background: var(--bg-card);
 }
 
 .reviews-grid {
@@ -545,12 +487,11 @@ section {
 
 .review-card {
     position: relative;
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(0, 163, 255, 0.15);
+    border: 1px solid var(--card-border);
     transition: var(--transition);
-    backdrop-filter: blur(15px);
 }
 
 .review-avatar {
@@ -574,20 +515,14 @@ section {
 }
 
 .review-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--accent-orange);
-    box-shadow: 0 20px 50px rgba(255, 138, 0, 0.2);
+    transform: translateY(-5px);
+    border-color: rgba(255, 138, 0, 0.3);
 }
 
 .review-card img {
     width: 100%;
     height: auto;
     display: block;
-    transition: var(--transition);
-}
-
-.review-card:hover img {
-    transform: scale(1.02);
 }
 
 .social-proof-content {
@@ -601,7 +536,6 @@ section {
     font-size: 1.2rem;
     font-weight: 600;
     color: var(--text-main);
-    text-align: center;
 }
 
 /* ─── Блок 8: Экономика ─── */
@@ -613,35 +547,25 @@ section {
 }
 
 .economy-item {
-    background: rgba(255, 255, 255, 0.03);
+    background: var(--bg-card);
     padding: 40px;
-    border-radius: 24px;
-    border: 1px solid rgba(255, 138, 0, 0.15);
-    backdrop-filter: blur(15px);
-    text-align: center; /* Центрируем всё */
-    transition: var(--transition);
-}
-
-.economy-item:hover {
-    border-color: var(--accent-orange);
-    box-shadow: 0 15px 35px rgba(255, 138, 0, 0.1);
+    border-radius: var(--card-radius);
+    border: 1px solid var(--card-border);
 }
 
 .economy-item h3 {
-    font-size: 0.95rem; /* Уменьшил с 1.1rem */
-    margin-bottom: 16px;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
     color: var(--accent-orange);
 }
 
 .item-compare {
-    margin-bottom: 16px; /* Уменьшил с 24px */
+    margin-bottom: 24px;
 }
 
 .compare-row {
-    padding: 8px 0;
-    font-size: 0.9rem;
-    letter-spacing: 0.01em;
-    line-height: 1.4;
+    padding: 12px 0;
+    font-size: 1.1rem;
 }
 
 .compare-row.old {
@@ -658,11 +582,9 @@ section {
 }
 
 .item-benefit {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--accent-orange);
-    letter-spacing: 0.03em; /* Растянул важный текст */
-    margin-top: 10px;
 }
 
 .economy-footer {
@@ -674,117 +596,56 @@ section {
 
 /* ─── Блок 9: Тарифы ─── */
 .screen-pricing {
-    background: #0A0D14;
-    padding: 80px 0;
+    background: var(--bg-card);
 }
 
-.m-grid {
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.pricing-card {
+    background: var(--bg-dark);
+    padding: 40px 30px;
+    border-radius: var(--card-radius);
+    border: 1px solid var(--card-border);
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
+    transition: var(--transition);
 }
 
-.m-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1.5px solid rgba(255, 255, 255, 0.4); /* Усиленная белая обводка */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    border-radius: 16px; /* Чуть меньше радиус для компактности */
-    padding: 12px 16px; /* Уменьшил отступы */
-    display: flex;
-    flex-direction: column;
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
-    position: relative;
-    font-family: 'Outfit', sans-serif;
+.pricing-card.highlighted {
+    border-color: var(--accent-orange);
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 138, 0, 0.1);
+    z-index: 2;
 }
 
-.m-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.pricing-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
     margin-bottom: 8px;
 }
 
-.m-title {
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: 0.85rem; /* Радикально уменьшил */
-    letter-spacing: 0.03em;
-    line-height: 1;
-}
-
-.m-card.master {
-    background: rgba(255, 138, 0, 0.04);
-    border: 2px solid var(--accent-orange); /* Оранжевый контур только здесь */
-    box-shadow: 0 0 30px rgba(255, 138, 0, 0.15);
-}
-
-.m-card.master .m-title {
+.stats {
     color: var(--accent-orange);
+    font-weight: 700;
+    margin-bottom: 24px;
 }
 
-.m-price {
-    color: #FFFFFF;
-    font-weight: 600;
-    font-size: 1.4rem; /* Радикально уменьшил */
-    line-height: 0.85;
-    display: flex;
-    align-items: baseline;
-}
-
-.m-currency {
-    font-size: 0.65rem; /* Уменьшил */
-    color: rgba(255, 255, 255, 0.6);
-    font-weight: 500;
-    margin-left: 2px;
-    letter-spacing: 0.01em;
-    line-height: normal;
-}
-
-.m-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.m-gen {
-    color: #FFFFFF;
-    font-size: 0.85rem; /* Уменьшил */
-    font-weight: 600;
-}
-
-.m-desc {
-    color: rgba(255, 255, 255, 0.4);
-    font-size: 0.75rem; /* Радикально уменьшил */
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.m-badge {
-    background: #FF8A00;
-    color: white;
-    font-size: 0.5rem;
-    font-weight: 900;
-    padding: 2px 6px;
-    border-radius: 4px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 8px;
-    position: relative;
-    top: -2px;
-}
-
-@media (max-width: 480px) {
-    .m-grid {
-        max-width: 100%;
-        padding: 0 15px;
-    }
-    .m-price {
-        font-size: 1.6rem; /* Плотнее на мобилках */
-    }
+.pricing-card .desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.4;
 }
 
 /* ─── Блок 10: FAQ ─── */
@@ -799,12 +660,11 @@ section {
 }
 
 .faq-item {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
-    border: 1px solid rgba(0, 163, 255, 0.1);
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
     overflow: hidden;
     transition: var(--transition);
-    backdrop-filter: blur(10px);
 }
 
 .faq-question {
@@ -843,8 +703,7 @@ section {
 }
 
 .faq-item.active {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 30px rgba(0, 163, 255, 0.15);
+    border-color: var(--accent-orange);
 }
 
 .faq-item.active .faq-question::after {
@@ -858,7 +717,7 @@ section {
 
 /* ─── Блок 11: Финал ─── */
 .screen-final {
-    background: linear-gradient(to top, rgba(255, 138, 0, 0.05) 0%, var(--bg-dark) 60%);
+    background: linear-gradient(to top, rgba(255, 138, 0, 0.1) 0%, transparent 60%);
     text-align: center;
 }
 
@@ -873,9 +732,12 @@ section {
 /* Кнопки */
 .btn {
     display: inline-block;
-    padding: 16px 32px;
+    padding: 18px 36px;
     border-radius: var(--btn-radius);
     font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    text-align: center;
     border: none;
     cursor: pointer;
 }
@@ -919,30 +781,7 @@ section {
 
 @media (max-width: 768px) {
     section {
-        padding: 25px 0; /* Еще меньше отступы */
-    }
-
-    .problems-grid, .benefits-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px; /* Уменьшил зазоры */
-    }
-    
-    .problem-card, .benefit-card {
-        padding: 10px 8px; /* Максимальная плотность */
-    }
-
-    .problem-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 4px;
-    }
-
-    .problem-card p, .benefit-card p {
-        font-size: 0.75rem; /* Очень мелкий, но читаемый шрифт */
-    }
-
-    .benefit-header {
-        font-size: 1rem;
+        padding: 60px 0;
     }
 
     .hero-visual {
@@ -953,17 +792,29 @@ section {
         padding-bottom: 40px;
     }
 
-    .economy-item {
-        padding: 20px;
-    }
-
     .economy-grid {
         grid-template-columns: 1fr;
+    }
+
+    .pricing-card.highlighted {
+        transform: none;
+    }
+
+    .pricing-grid {
         gap: 16px;
     }
 
-    .economy-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
+    .audience-text {
+        font-size: 1.2rem;
+    }
+
+    .logo-image-cropped {
+        height: 24px;
+        width: 90px;
+    }
+
+    .login-link {
+        padding: 6px 12px;
+        font-size: 0.8rem;
     }
 }
