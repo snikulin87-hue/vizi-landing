@@ -12,7 +12,7 @@
     --font-main: 'Outfit', sans-serif;
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --container-width: 1200px;
-    --section-gap: 8px; /* Единый стандарт зазора между карточками */
+    --section-gap: 8px; /* Выставил комфортный зазор между карточками */
 }
 
 * {
@@ -43,12 +43,12 @@ section {
 }
 
 .section-title {
-    font-size: clamp(1.1rem, 2.5vw, 1.3rem); /* Уменьшил ещё сильнее */
+    font-size: clamp(1.5rem, 5vw, 2.2rem); /* Увеличил для доминирования в иерархии */
     font-weight: 700;
     text-align: center;
-    margin-bottom: 40px; /* Отступ оставляю, он за "воздушность" */
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    margin-bottom: 48px; /* Добавил воздуха вокруг заголовка */
+    line-height: 1.1;
+    letter-spacing: -0.03em;
 }
 
 .section-description {
@@ -80,7 +80,7 @@ section {
 @media (max-width: 1280px) {
     .section-frame {
         max-width: calc(100% - 30px);
-        margin: 20px 15px 40px 15px;
+        margin: var(--section-gap) auto; /* Стандартизировал отступы */
         border-radius: 32px;
     }
 }
@@ -103,11 +103,14 @@ section {
 
 /* ─── Блок 1: ГЕРОЙ ─── */
 .screen-hero {
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 0;
-    background: transparent; /* Убрал блокирующий фон, чтобы светилась аврора */
+    padding: var(--section-gap) 0;
+    background: transparent; 
+}
+
+.screen-hero .section-frame {
+    padding-top: 20px; /* Уменьшил сверху, чтобы компенсировать шапку */
 }
 
 .hero-cta-wrapper {
@@ -808,7 +811,7 @@ section {
     background: none;
     border: none;
     color: var(--text-main);
-    font-size: 1.1rem;
+    font-size: 1rem; /* Немного уменьшил, чтобы заголовок раздела доминировал */
     font-weight: 600;
     text-align: left;
     cursor: pointer;
