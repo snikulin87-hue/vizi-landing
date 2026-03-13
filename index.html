@@ -5,10 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ВИЗИ ПРО - Визуализация потолков</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="ВИЗИ ПРО — AI-визуализация натяжных потолков для замерщиков. Покажите клиенту его будущий потолок за 30 секунд. Больше договоров, выше средний чек.">
+    <meta name="keywords" content="визуализация потолков, натяжные потолки, замерщик, ВИЗИ ПРО, AI визуализация">
+
+    <!-- Open Graph (для соцсетей и мессенджеров) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vizi.pro/">
+    <meta property="og:title" content="ВИЗИ ПРО — Визуализация потолков для замерщиков">
+    <meta property="og:description" content="Покажите клиенту его будущий потолок за 30 секунд. Больше договоров, выше средний чек.">
+    <meta property="og:image" content="https://vizi.pro/og-image.jpg">
+    <meta property="og:locale" content="ru_RU">
+
+    <!-- Twitter Card (опционально) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ВИЗИ ПРО — Визуализация потолков">
+    <meta name="twitter:description" content="AI-визуализация натяжных потолков для замерщиков">
+    <meta name="twitter:image" content="https://vizi.pro/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,7 +54,10 @@
                 <p class="hero-description">Покажите клиенту его будущий потолок - и закройте сделку раньше, чем он
                     начнет сравнивать вас с конкурентами.</p>
 
-                <a href="#block-9" class="btn btn-primary btn-large">Попробовать бесплатно</a>
+                <div class="hero-cta-wrapper">
+                    <a href="#block-9" class="btn btn-primary btn-large">Попробовать бесплатно</a>
+                    <p class="cta-hint">5 дней без оплаты</p>
+                </div>
             </div>
             <div class="hero-visual">
                 <!-- Здесь будет сгенерированное изображение -->
@@ -88,42 +115,22 @@
         <div class="section-frame">
             <div class="container">
                 <h2 class="section-title">Знакомые ситуации?</h2>
-                <div class="problems-grid">
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент говорит «Надо подумать»</p>
+                <div class="problems-list">
+                    <div class="problem-item">
+                        <span class="problem-x">✕</span>
+                        <span class="problem-text">Клиент говорит «Надо подумать»</span>
                     </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент не может представить, как будет выглядеть потолок</p>
+                    <div class="problem-item">
+                        <span class="problem-x">✕</span>
+                        <span class="problem-text">Клиент не может представить, как будет выглядеть потолок</span>
                     </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент боится ошибиться с освещением или дизайном</p>
+                    <div class="problem-item">
+                        <span class="problem-x">✕</span>
+                        <span class="problem-text">Клиент боится ошибиться с освещением или дизайном</span>
                     </div>
-                    <div class="problem-card">
-                        <div class="problem-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                                <line x1="18" y1="6" x2="6" y2="18"></line>
-                                <line x1="6" y1="6" x2="18" y2="18"></line>
-                            </svg>
-                        </div>
-                        <p>Клиент выбирает самый дешёвый вариант</p>
+                    <div class="problem-item">
+                        <span class="problem-x">✕</span>
+                        <span class="problem-text">Клиент выбирает самый дешёвый вариант</span>
                     </div>
                 </div>
                 <p class="problem-footer">Проблема не в цене. Проблема в том, что клиент не видит результат.</p>
@@ -158,6 +165,7 @@
 
                 <div class="cta-center">
                     <a href="#" class="btn btn-primary">Начать бесплатно</a>
+                    <p class="cta-hint">5 дней без оплаты</p>
                 </div>
             </div>
         </div>
@@ -190,16 +198,6 @@
         </div>
     </section>
 
-    <!-- ====== Блок 6: Для кого ====== -->
-    <section class="screen-audience" id="block-6">
-        <div class="section-frame">
-            <div class="container">
-                <h2 class="section-title">Кому подойдёт ВИЗИ ПРО</h2>
-                <p class="audience-text">Частным мастерам и компаниям любого размера — всем, кто общается с клиентом на
-                    замере.</p>
-            </div>
-        </div>
-    </section>
 
     <!-- ====== Блок 7: Социальное доказательство ====== -->
     <section class="screen-proof" id="block-7">
@@ -252,6 +250,7 @@
                 <p class="economy-footer">✅ Средний результат теста трёх крупных компаний за 2 месяца использования</p>
                 <div class="cta-center">
                     <a href="#" class="btn btn-primary">Начать бесплатно</a>
+                    <p class="cta-hint">5 дней без оплаты</p>
                 </div>
             </div>
         </div>
@@ -306,12 +305,13 @@
                         </div>
                         <div class="m-content">
                             <div class="m-gen">60 генераций в день</div>
-                            <div class="m-desc">для компании с 2-4 замерчиками.</div>
+                            <div class="m-desc">для компании с 2-4 замерщиками.</div>
                         </div>
                     </div>
                 </div>
                 <div class="cta-center" style="margin-top: 40px;">
                     <a href="#" class="btn btn-primary">Попробовать бесплатно</a>
+                    <p class="cta-hint">5 дней без оплаты</p>
                 </div>
             </div>
         </div>
@@ -392,9 +392,37 @@
             <p class="final-text">Покажи клиенту его потолок. Услышь «да» вместо «я подумаю».</p>
             <div class="cta-center">
                 <a href="#" class="btn btn-primary btn-large">Попробовать бесплатно</a>
+                <p class="cta-hint">5 дней без оплаты</p>
             </div>
         </div>
     </section>
+
+    <!-- ====== Блок 12: Футер ====== -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Левая часть: Бренд и соцсети -->
+                <div class="footer-left">
+                    <div class="footer-logo">ВИЗИ ПРО</div>
+                    <div class="footer-social">
+                        <a href="https://t.me/vizipro_channel" target="_blank" class="social-link">Telegram: @vizipro_channel</a>
+                        <a href="https://t.me/vizipro_support" target="_blank" class="social-link">Поддержка: @vizipro_support</a>
+                    </div>
+                </div>
+                
+                <!-- Правая часть: Юридическая информация и копирайт -->
+                <div class="footer-right">
+                    <div class="footer-legal">
+                        <a href="#" class="legal-link">Политика конфиденциальности</a>
+                        <a href="#" class="legal-link">Оферта</a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2025 ВИЗИ ПРО. Все права защищены.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -478,6 +506,16 @@
 
 
 
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+            once: true,
+            offset: 50
+        });
+    </script>
 </body>
 
 </html>
