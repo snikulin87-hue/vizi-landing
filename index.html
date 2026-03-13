@@ -12,10 +12,8 @@
 </head>
 
 <body>
-    <!-- ====== ЭКРАН 1: Герой ====== -->
-    <section class="screen-hero">
-
-        <!-- Шапка -->
+    <!-- ====== Блок 1: Первый экран ====== -->
+    <section class="screen-hero" id="block-1">
         <header class="site-header">
             <div class="container header-container">
                 <div class="logo-block">
@@ -25,92 +23,102 @@
             </div>
         </header>
 
-        <!-- Заголовок -->
-        <div class="hero-titles">
-            <h1 class="main-title">Устал слышать «я подумаю»?</h1>
-            <p class="sub-title">Это можно исправить!</p>
-        </div>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <p class="hero-label">Веб сервис для потолочников</p>
+                <h1 class="main-title">Помогает заключать договор прямо на замере.</h1>
+                <p class="hero-description">Покажите клиенту его будущий потолок - и закройте сделку раньше, чем он
+                    начнет сравнивать вас с конкурентами.</p>
 
-        <!-- Карусель -->
-        <div class="carousel-wrapper">
-            <div class="carousel-container" id="carousel">
-                <div class="carousel-track" id="carousel-track">
-                    <div class="carousel-slide">
-                        <img src="./step1.jpg" alt="Шаг 1">
-                        <div class="slide-caption">
-                            Сфотографируй комнату
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="./step2.jpg" alt="Шаг 2">
-                        <div class="slide-caption">
-                            Создай визуализацию за 30 сек
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="./step3.jpg" alt="Шаг 3">
-                        <div class="slide-caption">
-                            Покажи клиенту результат
-                        </div>
-                    </div>
-                    <div class="carousel-slide">
-                        <img src="./step4.jpg" alt="Шаг 4">
-                        <div class="slide-caption">
-                            Забери предоплату
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Стрелка свайпа -->
-                <div class="swipe-hint" id="swipe-hint">
-                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                    </svg>
-                </div>
-                <!-- Точки вставлены внутрь карусели -->
-                <div class="carousel-dots">
-                    <button class="dot active" data-index="0"></button>
-                    <button class="dot" data-index="1"></button>
-                    <button class="dot" data-index="2"></button>
-                    <button class="dot" data-index="3"></button>
-                </div>
+                <a href="#block-9" class="btn btn-primary btn-large">Попробовать бесплатно</a>
+            </div>
+            <div class="hero-visual">
+                <!-- Здесь будет сгенерированное изображение -->
+                <div class="hero-image-placeholder" id="hero-img"></div>
             </div>
         </div>
-
-        <!-- CTA + хинт на скролл -->
-        <div class="cta-bottom">
-            <button class="btn btn-primary btn-large">Начать бесплатно</button>
-        </div>
-
     </section>
 
-    <!-- ====== ЭКРАН 2: Соцдоказательство + До/После ====== -->
-    <section class="screen-second">
-        <div class="container second-container">
+    <!-- ====== Блок 2: Как это работает ====== -->
+    <section class="screen-carousel" id="block-2">
+        <div class="container">
+            <h2 class="section-title">Создай визуализацию за 30 сек</h2>
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="carousel">
+                    <div class="carousel-track" id="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="./step1.jpg" alt="Сфотографируй комнату">
+                            <div class="slide-caption">1. Сфотографируй комнату</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./step2.jpg" alt="Выбери потолок и освещение">
+                            <div class="slide-caption">2. Выбери потолок и освещение</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./step3.jpg" alt="Покажи клиенту результат">
+                            <div class="slide-caption">3. Покажи клиенту результат</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./step4.jpg" alt="Получи договор">
+                            <div class="slide-caption">4. Получи договор</div>
+                        </div>
+                    </div>
 
-            <!-- Социальное доказательство -->
-            <div class="social-proof-block">
-                <h2 class="social-title">С нами уже</h2>
-                <div class="avatars">
-                    <div class="avatar av1"></div>
-                    <div class="avatar av2"></div>
-                    <div class="avatar av3"></div>
-                    <div class="avatar av4"></div>
-                    <div class="avatar av5"></div>
+                    <div class="swipe-hint" id="swipe-hint">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </div>
+
+                    <div class="carousel-dots">
+                        <button class="dot active" data-index="0"></button>
+                        <button class="dot" data-index="1"></button>
+                        <button class="dot" data-index="2"></button>
+                        <button class="dot" data-index="3"></button>
+                    </div>
                 </div>
-                <p class="social-proof-text">
-                    <span class="icon">✅</span> 200+ мастеров · 9 200+ визуализаций за месяц
-                </p>
             </div>
+        </div>
+    </section>
 
-            <!-- Блок До / После -->
-            <div class="before-after-section">
-                <h2 class="section-title">Клиент видит результат до монтажа</h2>
+    <!-- ====== Блок 3: Проблемы ====== -->
+    <section class="screen-problems" id="block-3">
+        <div class="container">
+            <h2 class="section-title">Знакомые ситуации?</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент говорит «Надо подумать»</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент не может представить, как будет выглядеть потолок</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент боится ошибиться с освещением или дизайном</p>
+                </div>
+                <div class="problem-card">
+                    <span class="problem-icon">❌</span>
+                    <p>Клиент выбирает самый дешёвый вариант</p>
+                </div>
+            </div>
+            <p class="problem-footer">Проблема не в цене. Проблема в том, что клиент не видит результат.</p>
+        </div>
+    </section>
+
+    <!-- ====== Блок 4: Решение ====== -->
+    <section class="screen-solution" id="block-4">
+        <div class="container">
+            <h2 class="section-title">ВИЗИ ПРО убирает сомнения.</h2>
+            <p class="section-description">Клиент видит потолок — и понимает, за что платит.</p>
+
+            <div class="before-after-container">
                 <div class="image-comparison-slider">
-                    <img src="./after.jpg?v=3" alt="До" class="img-background">
-                    <img src="./before.jpg?v=3" alt="После" class="img-foreground" id="foreground-img">
+                    <img src="./after.jpg" alt="После" class="img-background">
+                    <img src="./before.jpg" alt="До" class="img-foreground" id="foreground-img">
                     <input type="range" min="0" max="100" value="50" class="slider" id="compare-slider">
                     <div class="slider-button" id="slider-button">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -125,18 +133,210 @@
                 <p class="slider-tip">Двигайте ползунок, чтобы увидеть разницу</p>
             </div>
 
-            <!-- Вторая CTA -->
-            <div class="cta-second">
-                <button class="btn btn-primary btn-large">Начать бесплатно</button>
+            <div class="cta-center">
+                <a href="#" class="btn btn-primary">Начать бесплатно</a>
             </div>
-
         </div>
     </section>
 
-    <!-- Скрипты -->
+    <!-- ====== Блок 5: Выгоды ====== -->
+    <section class="screen-benefits" id="block-5">
+        <div class="container">
+            <h2 class="section-title">Что это даёт?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-header">📈 +1-2 договора</div>
+                    <p>из каждых 10 замеров</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">💰 Чек x2</div>
+                    <p>за счёт света и дополнений</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">⚡ Решение на месте</div>
+                    <p>не «я перезвоню»</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-header">⏱ 30 секунд</div>
+                    <p>визуализация готова</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Блок 6: Для кого ====== -->
+    <section class="screen-audience" id="block-6">
+        <div class="container">
+            <h2 class="section-title">Кому подойдёт ВИЗИ ПРО</h2>
+            <p class="audience-text">Частным мастерам и компаниям любого размера — всем, кто общается с клиентом на
+                замере.</p>
+        </div>
+    </section>
+
+    <!-- ====== Блок 7: Социальное доказательство ====== -->
+    <section class="screen-proof" id="block-7">
+        <div class="container">
+            <h2 class="section-title">С нами уже</h2>
+            <div class="social-proof-content">
+                <div class="avatars">
+                    <div class="avatar av1"></div>
+                    <div class="avatar av2"></div>
+                    <div class="avatar av3"></div>
+                    <div class="avatar av4"></div>
+                    <div class="avatar av5"></div>
+                </div>
+                <p class="social-proof-text">✅ 200+ пользователей · 9 200+ визуализаций за месяц</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Блок 8: Экономика ====== -->
+    <section class="screen-economy" id="block-8">
+        <div class="container">
+            <h2 class="section-title">Сколько денег это приносит</h2>
+            <div class="economy-grid">
+                <div class="economy-item">
+                    <h3>Больше договоров</h3>
+                    <div class="item-compare">
+                        <div class="compare-row old">Было: 10 замеров → 4 договора</div>
+                        <div class="compare-row new">Стало: 10 замеров → 6 договоров</div>
+                    </div>
+                    <p class="item-benefit">+2 договора с каждых 10 замеров</p>
+                </div>
+                <div class="economy-item">
+                    <h3>Выше средний чек</h3>
+                    <div class="item-compare">
+                        <div class="compare-row old">Было: 57 000 ₽ <br><small>профиль со вставкой + светильники</small>
+                        </div>
+                        <div class="compare-row new">Стало: 132 000 ₽ <br><small>теневой профиль + треки +
+                                карниз</small></div>
+                    </div>
+                    <p class="item-benefit">Чек вырос в 2,3 раза</p>
+                </div>
+            </div>
+            <p class="economy-footer">✅ Средний результат теста трёх крупных компаний за 2 месяца использования</p>
+            <div class="cta-center">
+                <a href="#" class="btn btn-primary">Начать бесплатно</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Блок 9: Тарифы ====== -->
+    <section class="screen-pricing" id="block-9">
+        <div class="container">
+            <h2 class="section-title">Выберите тариф</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>СТАРТ</h3>
+                    <div class="price">1 990 ₽/мес</div>
+                    <p class="stats">5 генераций/день</p>
+                    <p class="desc">Для монтажника с 1 замером в день</p>
+                </div>
+                <div class="pricing-card highlighted">
+                    <h3>МАСТЕР</h3>
+                    <div class="price">3 490 ₽/мес</div>
+                    <p class="stats">10 генераций/день</p>
+                    <p class="desc">Для активного монтажника с 2–3 замерами в день</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>PRO</h3>
+                    <div class="price">5 990 ₽/мес</div>
+                    <p class="stats">20 генераций/день</p>
+                    <p class="desc">Для сильного мастера или небольшой бригады с 3–5 замерами в день</p>
+                </div>
+                <div class="pricing-card">
+                    <h3>КОМПАНИЯ</h3>
+                    <div class="price">14 990 ₽/мес</div>
+                    <p class="stats">60 генераций/день</p>
+                    <p class="desc">Для компаний с несколькими замерщиками. Статистика по сотрудникам.</p>
+                </div>
+            </div>
+            <div class="cta-center">
+                <a href="#" class="btn btn-primary">Попробовать бесплатно</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Блок 10: FAQ ====== -->
+    <section class="screen-faq" id="block-10">
+        <div class="container faq-container">
+            <h2 class="section-title">Частые вопросы</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">1. Сколько времени занимает визуализация?</button>
+                    <div class="faq-answer">
+                        <p>Одна визуализация — около 30 секунд.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">2. Сложно ли разобраться в приложении?</button>
+                    <div class="faq-answer">
+                        <p>Приложение интуитивно понятное. Ставка сделана на простоту и скорость.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">3. Нужно ли обучение?</button>
+                    <div class="faq-answer">
+                        <p>Внутри есть обучение: как продавать с помощью приложения, как располагать освещение в разных
+                            зонах и как сочетать разные типы решений. Обучение от дизайнера.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">4. Работает на iPhone и Android?</button>
+                    <div class="faq-answer">
+                        <p>Да. Ещё можно на планшетах и на ПК.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">5. Можно ли показать несколько вариантов клиенту?</button>
+                    <div class="faq-answer">
+                        <p>Да, можно создать несколько вариантов и показать клиенту на выбор.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">6. Как быстро окупается подписка?</button>
+                    <div class="faq-answer">
+                        <p>С одного заказа можно купить подписку на год.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">7. Что если закончились генерации на день?</button>
+                    <div class="faq-answer">
+                        <p>Можно докупить дополнительные генерации на день.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">8. Насколько реалистично выглядит результат?</button>
+                    <div class="faq-answer">
+                        <p>Максимально приближено к реальному виду после монтажа.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">9. Какие варианты потолков поддерживаются?</button>
+                    <div class="faq-answer">
+                        <p>Парящие, теневые, обычные примыкания. Несколько видов точечных светильников, несколько видов
+                            люстр, трековые системы, световые линии, карнизы с подсветкой и без. Постоянно дорабатываем
+                            и добавляем новые варианты.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== Блок 11: Финал ====== -->
+    <section class="screen-final" id="block-11">
+        <div class="container">
+            <h2 class="section-title">Попробуй ВИЗИ ПРО на следующем замере</h2>
+            <p class="final-text">Покажи клиенту его потолок. Услышь «да» вместо «я подумаю».</p>
+            <div class="cta-center">
+                <a href="#" class="btn btn-primary btn-large">Попробовать бесплатно</a>
+            </div>
+        </div>
+    </section>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // === Carousel ===
+            // === Carousel (Block 2) ===
             const track = document.getElementById('carousel-track');
             const dots = document.querySelectorAll('.dot');
             const swipeHint = document.getElementById('swipe-hint');
@@ -183,7 +383,7 @@
             }, { passive: true });
             startAuto();
 
-            // === Before/After Slider ===
+            // === Before/After Slider (Block 4) ===
             const slider = document.getElementById('compare-slider');
             const fg = document.getElementById('foreground-img');
             const btn = document.getElementById('slider-button');
@@ -194,6 +394,22 @@
                     btn.style.left = `calc(${v}% - 18px)`;
                 });
             }
+
+            // === FAQ Accordion (Block 10) ===
+            const faqQuestions = document.querySelectorAll('.faq-question');
+            faqQuestions.forEach(q => {
+                q.addEventListener('click', () => {
+                    const item = q.parentElement;
+                    const isActive = item.classList.contains('active');
+
+                    // Close all others
+                    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+
+                    if (!isActive) {
+                        item.classList.add('active');
+                    }
+                });
+            });
         });
     </script>
 </body>

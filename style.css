@@ -1,13 +1,17 @@
 :root {
     --bg-dark: #0B0B0D;
+    --bg-card: #1A1A1A;
     --accent-orange: #FF8A00;
     --accent-hover: #e07900;
+    --accent-red: #FF4B2B;
     --text-main: #FFFFFF;
     --text-muted: rgba(255, 255, 255, 0.7);
     --card-border: rgba(255, 255, 255, 0.08);
-    --btn-radius: 18px;
+    --btn-radius: 12px;
+    --card-radius: 20px;
     --font-main: 'Inter', sans-serif;
     --transition: all 0.3s ease;
+    --container-width: 1200px;
 }
 
 * {
@@ -20,142 +24,194 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-main);
     font-family: var(--font-main);
-    line-height: 1.5;
+    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 20px;
     width: 100%;
 }
 
-/* ==================================
-   ЭКРАН 1: ГЕРОЙ
-   ================================== */
-.screen-hero {
-    height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--bg-dark);
+/* ─── Общие стили секций ─── */
+section {
+    padding: 60px 0;
 }
 
-/* ─── Шапка ─── */
+.section-title {
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 48px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.cta-center {
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+}
+
+/* ─── Блок 1: ГЕРОЙ ─── */
+.screen-hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    background: radial-gradient(circle at top right, rgba(255, 138, 0, 0.05) 0%, transparent 40%);
+}
+
 .site-header {
-    flex-shrink: 0;
-    background-color: var(--bg-dark);
-    padding: 12px 0 0;
-    /* Шапка максимально прижата наверх */
+    padding: 20px 0;
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    /* Всё ровняем по верхнему краю */
-}
-
-/* Логотип */
-.logo-block {
-    display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .logo-image-cropped {
-    height: 54px;
-    width: 204px;
+    height: 48px;
+    width: 180px;
     background-image: url('./logo.png');
     background-size: contain;
-    background-position: center;
+    background-position: left center;
     background-repeat: no-repeat;
-    display: block;
 }
 
 .login-link {
     color: var(--text-main);
     text-decoration: none;
-    font-size: 1.1rem;
     font-weight: 600;
-    padding: 13px 24px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--card-border);
     transition: var(--transition);
-    margin-top: 2px;
-    /* Чуть опустить для идеального выравнивания по тексту логотипа */
 }
 
 .login-link:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.1);
 }
 
-/* ─── Заголовок ─── */
-.hero-titles {
-    flex-shrink: 0;
-    text-align: center;
-    padding: 24px 20px 32px;
-    /* Чуть увеличиваем отступы, давая больше воздуха */
-    background-color: var(--bg-dark);
+.hero-content {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    align-items: center;
+    gap: 60px;
+    padding-bottom: 80px;
+}
+
+.hero-label {
+    color: var(--accent-orange);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
 }
 
 .main-title {
-    font-size: clamp(1.15rem, 4.5vw, 1.8rem);
-    font-weight: 600;
-    line-height: 1.3;
-    color: var(--text-main);
-    margin-bottom: 12px;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 24px;
 }
 
-.sub-title {
-    font-size: clamp(1.5rem, 6vw, 2.6rem);
+.hero-description {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+.hero-pain {
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 4px solid var(--accent-orange);
+    padding: 20px;
+    border-radius: 0 12px 12px 0;
+    margin-bottom: 40px;
+}
+
+.hero-pain p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.hero-pain .accent-text {
     font-weight: 700;
-    color: var(--accent-orange);
-    line-height: 1.2;
+    color: var(--text-main);
+    font-size: 1.3rem;
+    margin-top: 4px;
 }
 
-/* ─── Карусель ─── */
+.hero-visual {
+    position: relative;
+    height: 500px;
+}
+
+.hero-image-placeholder {
+    width: 100%;
+    height: 100%;
+    background: #1a1a1a;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--card-border);
+    background-image: url('./hero_ceiling_viz.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* ─── Блок 2: Карусель ─── */
+.screen-carousel {
+    background: var(--bg-card);
+}
+
 .carousel-wrapper {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 0;
-    padding: 0 20px;
-    padding-bottom: 60px;
-    /* Увеличили снизу, чтобы сжать карусель ещё на ~10% и дать воздух */
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .carousel-container {
     position: relative;
-    width: 100%;
-    flex-grow: 1;
-    border-radius: 20px;
+    border-radius: var(--card-radius);
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     border: 1px solid var(--card-border);
+    aspect-ratio: 1/1;
+    max-width: 600px;
+    margin-inline: auto;
 }
 
 .carousel-track {
     display: flex;
     width: 400%;
     height: 100%;
-    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .carousel-slide {
     width: 25%;
     height: 100%;
     position: relative;
-    flex-shrink: 0;
 }
 
 .carousel-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
 .slide-caption {
@@ -163,49 +219,30 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 24px 20px 48px;
-    /* Место снизу для точек */
-    background: rgba(0, 0, 0, 0.7);
-    /* Полупрозрачная чёрная рамка поверх фото */
-    backdrop-filter: blur(8px);
-    /* Эффект матового стекла */
+    padding: 30px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     color: white;
-    font-size: clamp(1.4rem, 5.5vw, 1.75rem);
-    /* Увеличено на 25% */
+    font-size: 1.5rem;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    text-align: center;
 }
 
-.step-number {
-    color: var(--accent-orange);
-    font-size: 1.3em;
-}
-
-/* Swipe Hint */
 .swipe-hint {
     position: absolute;
-    right: 14px;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    width: 56px;
-    /* Было 44px, стало крупнее */
-    height: 56px;
-    background: rgba(255, 138, 0, 0.95);
+    width: 50px;
+    height: 50px;
+    background: var(--accent-orange);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     z-index: 10;
-    animation: swipeArrow 1s ease-in-out infinite;
-    /* Более быстрая подвижность */
-    transition: opacity 0.4s ease;
-    box-shadow: 0 6px 20px rgba(255, 138, 0, 0.6);
-    /* Более заметная тень */
+    animation: swipeArrow 1.5s infinite;
+    cursor: pointer;
 }
 
 @keyframes swipeArrow {
@@ -216,144 +253,229 @@ body {
     }
 
     50% {
-        transform: translateY(-50%) translateX(8px);
+        transform: translateY(-50%) translateX(10px);
     }
 }
 
-/* Dots — larger touch targets */
 .carousel-dots {
     position: absolute;
-    bottom: 16px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 16px;
-    /* Больше расстояние между точками */
-    z-index: 15;
+    gap: 12px;
 }
 
 .dot {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.3);
     border: none;
     cursor: pointer;
-    transition: var(--transition);
-    padding: 0;
-    /* Larger touch target */
-    outline: 12px solid transparent;
 }
 
 .dot.active {
     background: var(--accent-orange);
-    box-shadow: 0 0 8px rgba(255, 138, 0, 0.4);
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
-/* ─── CTA + Scroll Hint ─── */
-.cta-bottom {
-    flex-shrink: 0;
-    padding: 16px 20px 12px;
+/* ─── Блок 3: Проблемы ─── */
+.screen-problems {
+    padding: 40px 0;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.problem-card {
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    transition: var(--transition);
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-red);
+}
+
+.problem-icon {
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+.problem-card p {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.problem-footer {
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--accent-red);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ─── Блок 4: Решение / До-После ─── */
+.screen-solution {
+    background: radial-gradient(circle at bottom left, rgba(255, 138, 0, 0.05) 0%, transparent 30%);
+}
+
+.before-after-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image-comparison-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+}
+
+.img-background,
+.img-foreground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-foreground {
+    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+    z-index: 2;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: ew-resize;
+    z-index: 10;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    background: var(--accent-orange);
+    border-radius: 50%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--bg-dark);
-    gap: 8px;
-}
-
-.btn {
-    display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-main);
-    font-weight: 600;
-    font-size: clamp(1rem, 4vw, 1.125rem);
-    padding: 18px 40px;
-    border-radius: var(--btn-radius);
-    cursor: pointer;
-    transition: var(--transition);
-    border: none;
-    outline: none;
+    color: white;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 5;
+    box-shadow: 0 0 20px rgba(255, 138, 0, 0.5);
 }
 
-.btn-primary {
-    background-color: var(--accent-orange);
-    color: #fff;
-    box-shadow: 0 4px 20px rgba(255, 138, 0, 0.3);
+.slider-label {
+    position: absolute;
+    top: 20px;
+    padding: 8px 16px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    z-index: 5;
 }
 
-.btn-primary:hover {
-    background-color: var(--accent-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(255, 138, 0, 0.4);
+.label-after {
+    left: 20px;
 }
 
-.btn-large {
-    width: 100%;
-    max-width: 440px;
+.label-before {
+    right: 20px;
 }
 
-/* Scroll hint */
-.scroll-hint {
-    display: flex;
-    align-items: center;
-    gap: 4px;
+.slider-tip {
+    text-align: center;
+    margin-top: 20px;
     color: var(--text-muted);
-    font-size: 0.75rem;
+    font-size: 0.9rem;
+}
+
+/* ─── Блок 5: Выгоды ─── */
+.screen-benefits {
+    background: var(--bg-card);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.benefit-card {
+    background: var(--bg-dark);
+    padding: 40px 30px;
+    border-radius: var(--card-radius);
+    border: 1px solid var(--card-border);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-orange);
+}
+
+.benefit-header {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-orange);
+    margin-bottom: 12px;
+}
+
+.benefit-card p {
+    color: var(--text-muted);
     font-weight: 500;
-    animation: scrollBounce 2s ease-in-out infinite;
-    padding-bottom: 4px;
 }
 
-.scroll-arrow {
-    animation: scrollBounce 2s ease-in-out infinite;
-}
-
-@keyframes scrollBounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-        opacity: 0.5;
-    }
-
-    50% {
-        transform: translateY(4px);
-        opacity: 1;
-    }
-}
-
-/* ==================================
-   ЭКРАН 2: СОЦ.ДОКАЗАТЕЛЬСТВО + ДО/ПОСЛЕ
-   ================================== */
-.screen-second {
-    min-height: 100dvh;
-    padding: 60px 0 40px;
-    display: flex;
-    align-items: center;
-}
-
-.second-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 48px;
-}
-
-/* Social Proof */
-.social-proof-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+/* ─── Блок 6: Аудитория ─── */
+.screen-audience {
     text-align: center;
 }
 
-.social-title {
-    font-size: clamp(1.3rem, 4.5vw, 2rem);
-    font-weight: 700;
+.audience-text {
+    font-size: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
     color: var(--text-main);
+    font-weight: 500;
+}
+
+/* ─── Блок 7: Соцдоказательство ─── */
+.screen-proof {
+    background: var(--bg-card);
+}
+
+.social-proof-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
 }
 
 .avatars {
@@ -361,21 +483,20 @@ body {
 }
 
 .avatar {
-    width: 56px;
-    height: 56px;
-    border: 3px solid var(--bg-dark);
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--bg-card);
     border-radius: 50%;
-    margin-left: -14px;
-    background-color: #2a2a2a;
+    margin-left: -15px;
+    background-color: #333;
     background-size: cover;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .avatar:first-child {
     margin-left: 0;
 }
 
-/* Slavic male faces from generated-photos-like service */
 .av1 {
     background-image: url('https://i.pravatar.cc/150?img=52');
 }
@@ -397,238 +518,278 @@ body {
 }
 
 .social-proof-text {
-    font-size: clamp(0.9rem, 3.5vw, 1.15rem);
-    color: var(--text-main);
+    font-size: 1.2rem;
     font-weight: 600;
+    color: var(--text-main);
 }
 
-.icon {
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 4px;
+/* ─── Блок 8: Экономика ─── */
+.economy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
 }
 
-/* Before/After */
-.before-after-section {
-    width: 100%;
-    max-width: 700px;
-}
-
-.section-title {
-    font-size: clamp(1.2rem, 4vw, 1.8rem);
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 24px;
-}
-
-.slider-tip {
-    text-align: center;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    margin-top: 12px;
-    font-weight: 500;
-}
-
-.image-comparison-slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4/3;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+.economy-item {
+    background: var(--bg-card);
+    padding: 40px;
+    border-radius: var(--card-radius);
     border: 1px solid var(--card-border);
 }
 
-.image-comparison-slider img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    pointer-events: none;
+.economy-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+    color: var(--accent-orange);
 }
 
-#foreground-img {
-    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+.item-compare {
+    margin-bottom: 24px;
+}
+
+.compare-row {
+    padding: 12px 0;
+    font-size: 1.1rem;
+}
+
+.compare-row.old {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    opacity: 0.6;
+}
+
+.compare-row.new {
+    color: var(--text-main);
+    font-weight: 700;
+    border-bottom: 1px solid var(--accent-orange);
+    display: inline-block;
+}
+
+.item-benefit {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-orange);
+}
+
+.economy-footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 30px;
+}
+
+/* ─── Блок 9: Тарифы ─── */
+.screen-pricing {
+    background: var(--bg-card);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 48px;
+}
+
+.pricing-card {
+    background: var(--bg-dark);
+    padding: 40px 30px;
+    border-radius: var(--card-radius);
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.pricing-card.highlighted {
+    border-color: var(--accent-orange);
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(255, 138, 0, 0.1);
     z-index: 2;
 }
 
-#compare-slider {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    cursor: ew-resize;
-    opacity: 0;
-    z-index: 10;
-    margin: 0;
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
+.pricing-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.1em;
 }
 
-#compare-slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 36px;
-    height: 100vh;
-    background: transparent;
-    cursor: ew-resize;
+.price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 8px;
 }
 
-.slider-button {
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 18px);
-    width: 36px;
-    height: 36px;
-    transform: translateY(-50%);
-    background: var(--accent-orange);
-    border-radius: 50%;
+.stats {
+    color: var(--accent-orange);
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.pricing-card .desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* ─── Блок 10: FAQ ─── */
+.faq-container {
+    max-width: 800px;
+}
+
+.faq-accordion {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(255, 138, 0, 0.2);
-    z-index: 5;
-    color: white;
-    animation: pulse 2s ease-in-out infinite;
+    flex-direction: column;
+    gap: 16px;
 }
 
-@keyframes pulse {
-
-    0%,
-    100% {
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 0 4px rgba(255, 138, 0, 0.2);
-        transform: translateY(-50%) scale(1);
-    }
-
-    50% {
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 0 10px rgba(255, 138, 0, 0.15), 0 0 0 20px rgba(255, 138, 0, 0.05);
-        transform: translateY(-50%) scale(1.1);
-    }
+.faq-item {
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    transition: var(--transition);
 }
 
-.slider-button svg {
-    width: 16px;
-    height: 16px;
-    margin: -4px;
-}
-
-.slider-label {
-    position: absolute;
-    top: 16px;
-    padding: 6px 16px;
-    background: rgba(11, 11, 13, 0.8);
-    backdrop-filter: blur(10px);
-    border-radius: 20px;
-    font-size: 0.75rem;
+.faq-question {
+    width: 100%;
+    padding: 24px 30px;
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.1rem;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    z-index: 5;
-    pointer-events: none;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.label-before {
-    right: 16px;
-}
-
-.label-after {
-    left: 16px;
-}
-
-/* Second CTA */
-.cta-second {
+    text-align: left;
+    cursor: pointer;
     display: flex;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Responsive */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 16px;
+.faq-question::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--accent-orange);
+    transition: var(--transition);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.faq-answer p {
+    padding: 0 30px 24px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.faq-item.active {
+    border-color: var(--accent-orange);
+}
+
+.faq-item.active .faq-question::after {
+    transform: rotate(45deg);
+}
+
+.faq-item.active .faq-answer {
+    max-height: 400px;
+    /* Увеличил для более длинных текстов */
+}
+
+/* ─── Блок 11: Финал ─── */
+.screen-final {
+    background: linear-gradient(to top, rgba(255, 138, 0, 0.1) 0%, transparent 60%);
+    text-align: center;
+}
+
+.final-text {
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    margin-bottom: 48px;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 18px 36px;
+    border-radius: var(--btn-radius);
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--accent-orange);
+    color: white;
+    box-shadow: 0 10px 20px rgba(255, 138, 0, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(255, 138, 0, 0.4);
+}
+
+.btn-large {
+    font-size: 1.1rem;
+    padding: 20px 48px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 40px;
     }
 
-    .carousel-wrapper {
-        padding: 0 16px;
-        padding-bottom: 6px;
+    .hero-visual {
+        height: 400px;
+        order: -1;
     }
 
-    /* Уменьшенная шапка */
-    .logo-image-cropped {
-        height: 36px;
-        width: 136px;
+    .hero-pain {
+        border-left: none;
+        border-top: 4px solid var(--accent-orange);
+        border-radius: 0 0 12px 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
     }
 
-    .login-link {
-        padding: 8px 16px;
-        font-size: 0.85rem;
-        border-radius: 8px;
-        margin-top: 0;
+    .hero-visual {
+        height: 300px;
     }
 
-    .header-container {
-        align-items: center;
-        /* Центрируем по вертикали мелкие элементы */
+    .hero-content {
+        padding-bottom: 40px;
     }
 
-    .hero-titles {
-        padding: 16px 16px 20px;
-        /* Увеличили сверху, чтобы опустить карусель */
+    .economy-grid {
+        grid-template-columns: 1fr;
     }
 
-    .main-title {
-        font-size: clamp(1.3rem, 5vw, 1.8rem);
-        margin-bottom: 8px;
-        /* Немного больше отступ */
+    .pricing-card.highlighted {
+        transform: none;
     }
 
-    .sub-title {
-        font-size: clamp(1.7rem, 7vw, 2.6rem);
-    }
-
-    /* Компактная карусель */
-    .carousel-wrapper {
-        padding: 0 16px 20px;
-        /* Увеличили до 20px, чтобы уравнять с верхним отступом */
-    }
-
-    .slide-caption {
-        padding: 12px 16px;
-        font-size: 1.05rem;
-        font-weight: 600;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .carousel-dots {
-        bottom: 54px;
-        gap: 12px;
-    }
-
-    .cta-bottom {
-        padding: 0 16px 40px;
-        /* Убрали padding-top, так как 20px уже есть в .carousel-wrapper */
-    }
-
-    .btn-large {
-        max-width: none;
-    }
-
-    .screen-second {
-        padding: 40px 0 32px;
-    }
-
-    .second-container {
-        gap: 36px;
-    }
-
-    .social-proof-block {
+    .pricing-grid {
         gap: 16px;
+    }
+
+    .audience-text {
+        font-size: 1.2rem;
     }
 }
