@@ -70,42 +70,52 @@
 
     <!-- ====== Блок 2: Как это работает ====== -->
     <section class="screen-carousel" id="block-2">
-        <div class="container">
-            <h2 class="section-title">Создай визуализацию за 30 сек</h2>
-            <div class="carousel-wrapper">
-                <div class="carousel-container" id="carousel">
-                    <div class="carousel-track" id="carousel-track">
-                        <div class="carousel-slide">
-                            <img src="./step1.jpg" alt="Сфотографируй комнату">
-                            <div class="slide-caption">1. Сфотографируй комнату</div>
+        <div class="section-frame">
+            <div class="container">
+                <h2 class="section-title">Создай визуализацию за 30 сек</h2>
+                <div class="carousel-wrapper">
+                    <div class="carousel-container" id="carousel">
+                        <div class="carousel-track" id="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="./step1.jpg" alt="Сфотографируй комнату">
+                                <div class="slide-caption">1. Сфотографируй комнату</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./step2.jpg" alt="Выбери потолок и освещение">
+                                <div class="slide-caption">2. Выбери потолок и освещение</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./step3.jpg" alt="Покажи клиенту результат">
+                                <div class="slide-caption">3. Покажи клиенту результат</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="./step4.jpg" alt="Получи договор">
+                                <div class="slide-caption">4. Получи договор</div>
+                            </div>
                         </div>
-                        <div class="carousel-slide">
-                            <img src="./step2.jpg" alt="Выбери потолок и освещение">
-                            <div class="slide-caption">2. Выбери потолок и освещение</div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./step3.jpg" alt="Покажи клиенту результат">
-                            <div class="slide-caption">3. Покажи клиенту результат</div>
-                        </div>
-                        <div class="carousel-slide">
-                            <img src="./step4.jpg" alt="Получи договор">
-                            <div class="slide-caption">4. Получи договор</div>
-                        </div>
-                    </div>
 
-                    <div class="swipe-hint" id="swipe-hint">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </div>
+                        <div class="swipe-hint swipe-hint-prev" id="swipe-hint-prev" style="display:none;">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M19 12H5" />
+                                <path d="m12 19-7-7 7-7" />
+                            </svg>
+                        </div>
 
-                    <div class="carousel-dots">
-                        <button class="dot active" data-index="0"></button>
-                        <button class="dot" data-index="1"></button>
-                        <button class="dot" data-index="2"></button>
-                        <button class="dot" data-index="3"></button>
+                        <div class="swipe-hint" id="swipe-hint">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </div>
+
+                        <div class="carousel-dots">
+                            <button class="dot active" data-index="0"></button>
+                            <button class="dot" data-index="1"></button>
+                            <button class="dot" data-index="2"></button>
+                            <button class="dot" data-index="3"></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -435,6 +445,7 @@
             const track = document.getElementById('carousel-track');
             const dots = document.querySelectorAll('.dot');
             const swipeHint = document.getElementById('swipe-hint');
+            const swipeHintPrev = document.getElementById('swipe-hint-prev');
             let current = 0, total = 4, autoTimer, touchStartX = 0;
 
             function goTo(i) {
@@ -442,6 +453,7 @@
                 track.style.transform = `translateX(-${current * 25}%)`;
                 dots.forEach((d, j) => d.classList.toggle('active', j === current));
                 if (swipeHint) { swipeHint.style.opacity = current === 3 ? '0' : '1'; }
+                if (swipeHintPrev) { swipeHintPrev.style.display = current > 0 ? 'flex' : 'none'; }
             }
             function next() { goTo((current + 1) % total); }
             function prev() { goTo((current - 1 + total) % total); }
@@ -458,6 +470,14 @@
                 swipeHint.addEventListener('click', () => {
                     stopAuto();
                     next();
+                    startAuto();
+                });
+            }
+
+            if (swipeHintPrev) {
+                swipeHintPrev.addEventListener('click', () => {
+                    stopAuto();
+                    prev();
                     startAuto();
                 });
             }
